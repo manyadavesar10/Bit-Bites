@@ -1,0 +1,403 @@
+/* ========================
+   GLOBAL STYLES & RESET
+======================== */
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #c1f1d1;
+  color: #2d3436;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========================
+   NAVBAR
+======================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(250, 177, 160, 0.95);
+  backdrop-filter: blur(4px);
+  border-bottom: 4px solid black;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Press Start 2P', cursive;
+  transform: translateY(2px);
+}
+
+.logo-icon {
+  width: 70px;
+  height: 70px;
+  image-rendering: pixelated;
+  object-fit: contain;
+  font-size: 0;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2d3436;
+  line-height: 1;
+}
+
+.logo:hover {
+  transform: scale(1.03);
+}
+
+/* ========================
+   NAV LINKS & DROPDOWNS
+======================== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  font-size: 10px;
+  color: black;
+  text-decoration: none;
+  background: #ffeaa7;
+  padding: 5px 10px;
+  border: 2px solid black;
+  box-shadow: 3px 3px black;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: #55efc4;
+  transform: scale(1.03);
+  box-shadow: 2px 2px 0 #2d3436;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px black;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffeaa7;
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  padding: 10px;
+  list-style: none;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+
+.dropdown-content li {
+  margin-bottom: 8px;
+}
+.dropdown-content a {
+  display: block;
+  font-size: 10px;
+  background: #fab1a0;
+  padding: 5px 8px;
+  margin: 4px 0;
+  color: black;
+  border: 2px solid black;
+  text-decoration: none;
+  box-shadow: 3px 3px black;
+}
+
+.dropdown-content a:hover {
+  background: #55efc4;
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+/* ========================
+   HERO SECTION
+======================== */
+.hero {
+  height: 100vh;
+  background: #ffeaa7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* ========================
+   FLOATING PIXEL ICONS
+======================== */
+.floating-icons img {
+  width: 170px;
+  position: absolute;
+  animation: float 5s infinite ease-in-out alternate;
+  opacity: 0.6;
+}
+
+.pixel-1 { top: 10%; left: 5%; }
+.pixel-2 { top: 20%; right: 10%; animation-delay: 1s; }
+.pixel-3 { top: 10%; right: 30%; animation-delay: 2s; }
+.pixel-4 { bottom: 1%; right: 25%; animation-delay: 1.5s; }
+.pixel-5 { bottom: 7%; left: 15%; animation-delay: 0.5s; }
+.pixel-6 { bottom: 5%; right: 5%; animation-delay: 2.5s; }
+.pixel-7 { bottom: 2%; left: 40%; animation-delay: 2.5s; }
+.pixel-8 { bottom: 30%; right: 1%; animation-delay: 2.5s; }
+.pixel-9 { bottom: 30%; left: 1%; animation-delay: 2.5s; }
+.pixel-10 { top: 10%; left: 30%; animation-delay: 2.5s; }
+
+/* ========================
+   SEARCH BAR
+======================== */
+.search-bar input {
+  padding: 10px;
+  font-family: 'Press Start 2P';
+  font-size: 10px;
+  width: 200px;
+  border: 4px solid black;
+  box-shadow: 4px 4px black;
+  background: #fff;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  font-family: 'Press Start 2P';
+  font-size: 10px;
+  border: 4px solid black;
+  background: #55efc4;
+  box-shadow: 4px 4px black;
+  cursor: pointer;
+}
+
+/* ========================
+   RECIPE GRID & CARDS
+======================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.card {
+  background: #fff;
+  border: 4px solid black;
+  box-shadow: 6px 6px black;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border: 3px solid black;
+}
+
+.card h3 {
+  font-size: 10px;
+  margin: 5px 0;
+}
+
+.card button {
+  font-size: 8px;
+  padding: 5px 10px;
+  background: #ffeaa7;
+  border: 2px solid black;
+  box-shadow: 2px 2px black;
+  font-family: 'Press Start 2P';
+  cursor: pointer;
+}
+
+/* ========================
+   SECTION STYLES
+======================== */
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* ========================
+   DARK MODE
+======================== */
+body.dark {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark .hero {
+  background-color: #121212;
+}
+
+body.dark .hero h1,
+body.dark .hero p {
+  color: #ffffff;
+  text-shadow: 1px 1px #000;
+}
+
+body.dark .floating-icons img {
+  opacity: 0.8;
+}
+
+body.dark .navbar {
+  background-color: #2c2c2c;
+  border-color: #ffffff;
+  box-shadow: 4px 4px #000;
+}
+
+body.dark .card {
+  background: #292929;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  box-shadow: 4px 4px #000;
+}
+
+body.dark .card img {
+  border: 3px solid #ffffff;
+}
+
+body.dark .card button {
+  background: #3a3a3a;
+  color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px #000;
+}
+body, .card, .hero, .section {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+body.dark .search-bar input,
+body.dark .search-bar button {
+  background: #3a3a3a;
+  color: #fff;
+  border: 3px solid #fff;
+}
+
+body.dark .nav-links a {
+  background-color: #3a3a3a;
+  color: #f5f5f5;
+  border-color: #f5f5f5;
+}
+
+body.dark .nav-links a:hover {
+  background-color: #555;
+}
+
+body.dark .dropdown-content {
+  background: #444;
+  border-color: #fff;
+}
+
+body.dark .logo-text {
+  color: #f1f1f1;
+}
+
+/* ========================
+   DARK MODE TOGGLE BUTTON
+======================== */
+.toggle-darkmode {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffeaa7;
+  border: 4px solid black;
+  font-size: 10px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 4px 4px black;
+  z-index: 999;
+}
+
+/* ========================
+   LOADING SPINNER
+======================== */
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #2d3436;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 0.8s linear infinite;
+  margin: 50px auto;
+}
+
+/* ========================
+   ANIMATIONS
+======================== */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

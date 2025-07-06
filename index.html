@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bit Bites</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!--  NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="pictures/chef.png" class="logo-icon" alt="Bit Bites Logo" />
+        <span class="logo-text">Bit Bites</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Recipes ▼</a>
+
+          <ul class="dropdown-content">
+            <li><a href="category.html?type=dessert">Desserts</a></li>
+            <li><a href="category.html?type=fastfood">Fast Food</a></li>
+            <li><a href="category.html?type=healthy">Healthy</a></li>
+            <li><a href="category.html?type=seafood">Seafood</a></li>
+
+          </ul>
+        </li>
+        <li><a href="favorites.html">Favourites</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="floating-icons">
+      <img src="pictures/sandwich.png" class="float-pixel pixel-1" />
+      <img src="pictures/hotdog.png" class="float-pixel pixel-2" />
+      <img src="pictures/donut.png" class="float-pixel pixel-3" />
+      <img src="pictures/cake slice.png" class="float-pixel pixel-4" />
+      <img src="pictures/cake.png" class="float-pixel pixel-5" />
+      <img src="pictures/burger 2.png" class="float-pixel pixel-6" />
+      <img src="pictures/ketchup.png" class="float-pixel pixel-7" />
+      <img src="pictures/strawberry.png" class="float-pixel pixel-8" />
+      <img src="pictures/taco.png" class="float-pixel pixel-9" />
+      <img src="pictures/muffin.png" class="float-pixel pixel-10" />
+    </div>
+
+    <div class="hero-content">
+      <h1>Welcome to Bit Bites!!</h1>
+      <p>A Recipe Arcade for Hungry Hearts^o^!!</p>
+      <form class="search-bar" onsubmit="handleSearch(event)">
+        <input type="text" id="landingSearch" placeholder="Search Recipes" />
+        <button type="submit">🔍 Search</button>
+      </form>
+
+    </div>
+  </header>
+
+  <!-- SEARCH RESULTS -->
+  <section class="section" id="searchResultsSection" style="display: none;">
+    <h2>🍳 Search Results</h2>
+    <div class="grid" id="searchResultsGrid"></div>
+  </section>
+
+  <!-- DARK MODE TOGGLE + SOUND -->
+  <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙</button>
+  <audio id="clickSound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+  <div id="loader" class="loader" style="display: none;"></div>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
