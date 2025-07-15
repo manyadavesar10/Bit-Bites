@@ -144,10 +144,12 @@ function buildRecipeCard(meal) {
 function fetchRecommendedRecipes() {
   const grid = document.getElementById("recommendedGrid");
   let count = 0;
+  const totalRecipes = 20;  // Shows 5 rows (4 per row)
+
   grid.innerHTML = "";
 
   function fetchRandom() {
-    if (count >= 12) return;
+    if (count >= totalRecipes) return;
 
     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
       .then(res => res.json())
@@ -156,7 +158,7 @@ function fetchRecommendedRecipes() {
         const card = buildRecipeCard(meal);
         grid.appendChild(card);
         count++;
-        fetchRandom();
+        fetchRandom();   // Keep fetching until 20 recipes
       });
   }
 
@@ -167,3 +169,4 @@ function fetchRecommendedRecipes() {
 if (document.getElementById("favoritesGrid")) {
   loadFavorites();
 }
+fetchRecommendedRecipes();
