@@ -6,3 +6,52 @@ body {
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+/*  NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(250, 177, 160, 0.95);
+  backdrop-filter: blur(4px);
+  border-bottom: 4px solid black;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+/*  HERO SECTION */
+.hero {
+  height: 100vh;
+  background: #ffeaa7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.hero-content {
+  animation: fadeInUp 1s ease-in-out;
+}
+/*  SEARCH BAR */
+.search-bar input {
+  padding: 10px;
+  font-family: 'Press Start 2P';
+  font-size: 10px;
+  width: 200px;
+  border: 4px solid black;
+  box-shadow: 4px 4px black;
+  background: #fff;
+  margin-right: 10px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  font-family: 'Press Start 2P';
+  font-size: 10px;
+  border: 4px solid black;
+  background: #55efc4;
+  box-shadow: 4px 4px black;
+  cursor: pointer;
+}
