@@ -217,3 +217,14 @@ button:hover {
   font-family: 'Press Start 2P';
   cursor: pointer;
 }
+/* SECTION STYLE */
+.section {
+  padding: 40px 20px;
+  text-align: center;
+}
+.section h2 {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/*  */
