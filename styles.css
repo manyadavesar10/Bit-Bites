@@ -150,7 +150,6 @@ button:hover {
   background: #fff;
   margin-right: 10px;
 }
-
 .search-bar button {
   padding: 10px 20px;
   font-family: 'Press Start 2P';
@@ -160,3 +159,22 @@ button:hover {
   box-shadow: 4px 4px black;
   cursor: pointer;
 }
+
+/*  FLOATING ICONS */
+.floating-icons img {
+  width: 170px;
+  position: absolute;
+  animation: float 5s infinite ease-in-out alternate;
+  opacity: 0.6;
+}
+
+.pixel-1 { top: 10%; left: 5%; }
+.pixel-2 { top: 20%; right: 10%; animation-delay: 1s; }
+.pixel-3 { top: 10%; right: 30%; animation-delay: 2s; }
+.pixel-4 { bottom: 1%; right: 25%; animation-delay: 1.5s; }
+.pixel-5 { bottom: 7%; left: 15%; animation-delay: 0.5s; }
+.pixel-6 { bottom: 5%; right: 5%; animation-delay: 2.5s; }
+.pixel-7 { bottom: 2%; left: 40%; animation-delay: 2.5s; }
+.pixel-8 { bottom: 30%; right: 1%; animation-delay: 2.5s; }
+.pixel-9 { bottom: 30%; left: 1%; animation-delay: 2.5s; }
+.pixel-10 { top: 10%; left: 30%; animation-delay: 2.5s; }
