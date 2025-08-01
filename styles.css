@@ -227,4 +227,77 @@ button:hover {
   margin-bottom: 30px;
 }
 
+/* DARK MODE */
+body.dark {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+body.dark .hero {
+  background-color: #121212;
+}
+body.dark .hero h1,
+body.dark .hero p {
+  color: #ffffff;
+  text-shadow: 1px 1px #000;
+}
+body.dark .floating-icons img {
+  opacity: 0.8;
+}
+body.dark .navbar {
+  background-color: #2c2c2c;
+  border-color: #ffffff;
+  box-shadow: 4px 4px #000;
+}
+body.dark .card {
+  background: #292929;
+  color: #ffffff;
+  border: 3px solid #ffffff;
+  box-shadow: 4px 4px #000;
+}
+body.dark .card img {
+  border: 3px solid #ffffff;
+}
+body.dark .card button {
+  background: #3a3a3a;
+  color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px #000;
+}
+body, .card, .hero, .section {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+body.dark .search-bar input,
+body.dark .search-bar button {
+  background: #3a3a3a;
+  color: #fff;
+  border: 3px solid #fff;
+}
+body.dark .nav-links a {
+  background-color: #3a3a3a;
+  color: #f5f5f5;
+  border-color: #f5f5f5;
+}
+body.dark .nav-links a:hover {
+  background-color: #555;
+}
+body.dark .dropdown-content {
+  background: #444;
+  border-color: #fff;
+}
+body.dark .logo-text {
+  color: #f1f1f1;
+}
+.toggle-darkmode {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffeaa7;
+  border: 4px solid black;
+  font-size: 10px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 4px 4px black;
+  z-index: 999;
+}
+
 /*  */
