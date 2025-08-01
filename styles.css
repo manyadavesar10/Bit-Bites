@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #c1f1d1;
+  color: #2d3436;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
