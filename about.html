@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Bit Bites</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- ✅ Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="pictures/chef.png" class="logo-icon" alt="Bit Bites Logo" />
+        <span class="logo-text">Bit Bites</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Recipes ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="category.html?type=dessert">Desserts</a></li>
+            <li><a href="category.html?type=fastfood">Fast Food</a></li>
+            <li><a href="category.html?type=healthy">Healthy</a></li>
+            <li><a href="category.html?type=seafood">Seafood</a></li>
+          </ul>
+        </li>
+        <li><a href="favorites.html">Favourites</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ✅ Floating Food Icons -->
+  <div class="floating-icons">
+    <img src="pictures/sandwich.png" class="pixel-1" />
+    <img src="pictures/hotdog.png" class="pixel-2" />
+    <img src="pictures/donut.png" class="pixel-3" />
+    <img src="pictures/cake slice.png" class="pixel-4" />
+    <img src="pictures/burger 2.png" class="pixel-5" />
+  </div>
+
+  <!-- ✅ About Section -->
+  <section class="about-section">
+    <h1>👋 Welcome to Bit Bites!</h1>
+    <p>
+      Bit Bites is a recipe website made for people who love food, aesthetics, and pretending to have their life together.
+      Whether you're craving fast food, fancy desserts, or just want to scroll through cute meals while procrastinating — you're in the right place.
+      You’ll find easy recipes, fun flavors, and retro design that looks like your favorite childhood game had a food baby.
+    </p>
+
+    <h1 class="about-me-heading">🧑‍🍳 About Me</h1>
+
+<div class="about-me-wrapper">
+  <div class="about-image">
+    <img src="pictures/Pixilart-avatar-1751817009383.png" alt="My Chef Avatar" />
+  </div>
+  <div class="about-text">
+    <p>
+      Hi, I’m the chaos coordinator behind all this — part-time coder, full-time snack enthusiast.  
+      I built this site because I love making things that are both useful and unnecessarily adorable.  
+      I collect recipes like Pokémon, cook like a distracted grandma, and deeply believe that cheese is a personality trait.  
+      If you’re here, I already like you. And if you bookmark Bit Bites? I’ll like you even more.
+    </p>
+  </div>
+</div>
+
+    <h1>✨ Why Bit Bites Exists</h1>
+    <p>
+      I wanted to create a cozy, creative space where food feels fun, not overwhelming.  
+      A place where you can discover recipes, save your favorites, and maybe even get inspired to cook something instead of ordering fries again (no judgment though).
+    </p>
+
+    <p><strong>You can trust me. I once made cereal without googling it.</strong></p>
+
+    <!-- ✅ Contact Section -->
+    <div class="contact-section">
+      <h2>📬 Contact Me</h2>
+      <a href="mailto:manyadavesar@gmail.com">Email Me</a>
+    </div>
+  </section>
+
+  <!-- ✅ Dark Mode -->
+  <button class="toggle-darkmode" onclick="toggleDarkMode()">🌙</button>
+  <audio id="clickSound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+    }
+    if (localStorage.getItem("darkMode") === "true") {
+      document.body.classList.add("dark");
+    }
+  </script>
+</body>
+</html>
