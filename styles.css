@@ -6,6 +6,7 @@ body {
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 /*  NAVBAR */
 .navbar {
   position: sticky;
@@ -19,6 +20,109 @@ body {
   display: flex;
   align-items: center;
 }
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Press Start 2P', cursive;
+  transform: translateY(2px);
+}
+.logo-icon {
+  width: 70px;
+  height: 70px;
+  image-rendering: pixelated;
+  object-fit: contain;
+  font-size: 0;
+}
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2d3436;
+  line-height: 1;
+}
+.logo:hover {
+  transform: scale(1.03);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+.nav-links a {
+  font-size: 10px;
+  color: black;
+  text-decoration: none;
+  background: #ffeaa7;
+  padding: 5px 10px;
+  border: 2px solid black;
+  box-shadow: 3px 3px black;
+  transition: all 0.2s ease;
+}
+.nav-links a:hover {
+  background-color: #55efc4;
+  transform: scale(1.03);
+  box-shadow: 2px 2px 0 #2d3436;
+  transition: 0.2s ease-in-out;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 4px 4px black;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown-content {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffeaa7;
+  border: 2px solid black;
+  box-shadow: 4px 4px black;
+  padding: 10px;
+  list-style: none;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+.dropdown-content li {
+  margin-bottom: 8px;
+}
+.dropdown-content a {
+  display: block;
+  font-size: 10px;
+  background: #fab1a0;
+  padding: 5px 8px;
+  margin: 4px 0;
+  color: black;
+  border: 2px solid black;
+  text-decoration: none;
+  box-shadow: 3px 3px black;
+}
+.dropdown-content a:hover {
+  background: #55efc4;
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 /*  HERO SECTION */
 .hero {
   height: 100vh;
@@ -34,6 +138,7 @@ body {
 .hero-content {
   animation: fadeInUp 1s ease-in-out;
 }
+
 /*  SEARCH BAR */
 .search-bar input {
   padding: 10px;
