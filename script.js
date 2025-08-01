@@ -82,3 +82,49 @@ function searchRecipes() {
       section.scrollIntoView({ behavior: "smooth" });
     });
 }
+// Favourites
+function isRecipeSaved(id) {
+  let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+  return favs.some(f => f.id === id);
+}
+
+function saveFavorite(id, name, img, button) {
+  let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+  if (!favs.find(f => f.id === id)) {
+    favs.push({ id, name, img });
+    localStorage.setItem("favorites", JSON.stringify(favs));
+
+    // ✅ Change button to Unsave
+    if (button) {
+      button.textContent = "🗑️ Unsave";
+      button.onclick = () => unsaveFavorite(id, button);
+    }
+  }
+}
+
+function unsaveFavorite(id, button) {
+  let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+  favs = favs.filter(f => f.id !== id);
+  localStorage.setItem("favorites", JSON.stringify(favs));
+
+  // ✅ Change button back to Save
+  if (button) {
+    button.textContent = "❤️ Save";
+    button.onclick = () => saveFavorite(id, button.dataset.name, button.dataset.img, button);
+  }
+
+  // Optional: If on favorites.html, reload to reflect unsave
+  if (document.getElementById("favoritesGrid")) {
+    location.reload();
+  }
+}
+
+// Auto-load on favourites.html
+if (document.getElementById("favoritesGrid")) {
+  loadFavorites();
+}
+function handleSearch(e) {
+  e.preventDefault(); // Stop form from reloading the page
+  playClick();
+  searchRecipes();
+}
