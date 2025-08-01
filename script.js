@@ -5,6 +5,14 @@ function playClick() {
     audio.play();
   }
 }
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+  localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+}
+
+if (localStorage.getItem("darkMode") === "true") {
+  document.body.classList.add("dark");
+}
 
 function searchRecipes() {
   const input = document.getElementById("landingSearch");
