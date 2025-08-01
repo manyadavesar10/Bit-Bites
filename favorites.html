@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favourites – Bit Bites</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="pictures/chef.png" class="logo-icon" alt="Bit Bites Logo" />
+      <span class="logo-text">Bit Bites</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Recipes ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="category.html?type=dessert">Desserts</a></li>
+          <li><a href="category.html?type=fastfood">Fast Food</a></li>
+          <li><a href="category.html?type=healthy">Healthy</a></li>
+          <li><a href="category.html?type=seafood">Seafood</a></li>
+        </ul>
+      </li>
+      <li><a href="favorites.html">Favourites</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+  <section class="section">
+    <h2>❤️ Your Favourite Recipes</h2>
+    <div class="grid" id="favoritesGrid"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
