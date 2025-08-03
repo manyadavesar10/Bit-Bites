@@ -45,14 +45,28 @@ function searchRecipes() {
       // 1️⃣ Add the main searched meal
       const mainMeal = data.meals[0];
       const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `
-        <a href="https://www.themealdb.com/meal.php?c=${mainMeal.idMeal}" target="_blank">
-          <img src="${mainMeal.strMealThumb}" />
-          <h3>${mainMeal.strMeal}</h3>
-        </a>
-        <button onclick="saveFavorite('${mainMeal.idMeal}', '${mainMeal.strMeal}', '${mainMeal.strMealThumb}')">❤️ Save</button>
-      `;
+card.className = "card";
+card.innerHTML = `
+  <a href="https://www.themealdb.com/meal.php?c=${mainMeal.idMeal}" target="_blank">
+    <img src="${mainMeal.strMealThumb}" />
+    <h3>${mainMeal.strMeal}</h3>
+  </a>
+`;
+
+const button = document.createElement("button");
+const isSaved = isRecipeSaved(mainMeal.idMeal);
+button.textContent = isSaved ? "🗑️ Unsave" : "❤️ Save";
+button.dataset.name = mainMeal.strMeal;
+button.dataset.img = mainMeal.strMealThumb;
+
+if (isSaved) {
+  button.onclick = () => unsaveFavorite(mainMeal.idMeal, button);
+} else {
+  button.onclick = () => saveFavorite(mainMeal.idMeal, mainMeal.strMeal, mainMeal.strMealThumb, button);
+}
+
+card.appendChild(button);
+
       grid.appendChild(card);
 
       // 2️⃣ Now fetch related meals by same category
@@ -66,14 +80,28 @@ function searchRecipes() {
 
             relatedMeals.forEach(meal => {
               const relCard = document.createElement("div");
-              relCard.className = "card";
-              relCard.innerHTML = `
-                <a href="https://www.themealdb.com/meal.php?c=${meal.idMeal}" target="_blank">
-                  <img src="${meal.strMealThumb}" />
-                  <h3>${meal.strMeal}</h3>
-                </a>
-                <button onclick="saveFavorite('${meal.idMeal}', '${meal.strMeal}', '${meal.strMealThumb}')">❤️ Save</button>
-              `;
+relCard.className = "card";
+relCard.innerHTML = `
+  <a href="https://www.themealdb.com/meal.php?c=${meal.idMeal}" target="_blank">
+    <img src="${meal.strMealThumb}" />
+    <h3>${meal.strMeal}</h3>
+  </a>
+`;
+
+const button = document.createElement("button");
+const isSaved = isRecipeSaved(meal.idMeal);
+button.textContent = isSaved ? "🗑️ Unsave" : "❤️ Save";
+button.dataset.name = meal.strMeal;
+button.dataset.img = meal.strMealThumb;
+
+if (isSaved) {
+  button.onclick = () => unsaveFavorite(meal.idMeal, button);
+} else {
+  button.onclick = () => saveFavorite(meal.idMeal, meal.strMeal, meal.strMealThumb, button);
+}
+
+relCard.appendChild(button);
+
               grid.appendChild(relCard);
             });
           }
@@ -102,7 +130,6 @@ function saveFavorite(id, name, img, button) {
   }
 }
 
-
 function unsaveFavorite(id, button) {
   let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
   favs = favs.filter(f => f.id !== id);
@@ -113,7 +140,36 @@ function unsaveFavorite(id, button) {
     button.onclick = () => saveFavorite(id, button.dataset.name, button.dataset.img, button);
   }
 }
+function loadFavorites() {
+  const container = document.getElementById("favoritesGrid");
+  const favs = JSON.parse(localStorage.getItem("favorites") || "[]");
 
+  if (!favs.length) {
+    container.innerHTML = "<p>No favourites yet!</p>";
+    return;
+  }
+
+  container.innerHTML = "";
+  favs.forEach(meal => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <a href="https://www.themealdb.com/meal.php?c=${meal.id}" target="_blank">
+        <img src="${meal.img}" />
+        <h3>${meal.name}</h3>
+      </a>
+    `;
+
+    const button = document.createElement("button");
+    button.textContent = "🗑️ Unsave";
+    button.onclick = () => {
+      unsaveFavorite(meal.id, button);
+      loadFavorites(); // Refresh the list after removing
+    };
+    card.appendChild(button);
+    container.appendChild(card);
+  });
+}
 
 // Auto-load on favourites.html
 if (document.getElementById("favoritesGrid")) {
