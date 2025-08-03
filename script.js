@@ -108,17 +108,12 @@ function unsaveFavorite(id, button) {
   favs = favs.filter(f => f.id !== id);
   localStorage.setItem("favorites", JSON.stringify(favs));
 
-  // ✅ Change button back to Save
   if (button) {
     button.textContent = "❤️ Save";
     button.onclick = () => saveFavorite(id, button.dataset.name, button.dataset.img, button);
   }
-
-  // Optional: If on favorites.html, reload to reflect unsave
-  if (document.getElementById("favoritesGrid")) {
-    location.reload();
-  }
 }
+
 
 // Auto-load on favourites.html
 if (document.getElementById("favoritesGrid")) {
