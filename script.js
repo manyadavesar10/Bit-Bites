@@ -90,17 +90,18 @@ function isRecipeSaved(id) {
 
 function saveFavorite(id, name, img, button) {
   let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
+
   if (!favs.find(f => f.id === id)) {
     favs.push({ id, name, img });
     localStorage.setItem("favorites", JSON.stringify(favs));
+  }
 
-    // ✅ Change button to Unsave
-    if (button) {
-      button.textContent = "🗑️ Unsave";
-      button.onclick = () => unsaveFavorite(id, button);
-    }
+  if (button) {
+    button.textContent = "🗑️ Unsave";
+    button.onclick = () => unsaveFavorite(id, button);
   }
 }
+
 
 function unsaveFavorite(id, button) {
   let favs = JSON.parse(localStorage.getItem("favorites") || "[]");
