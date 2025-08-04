@@ -334,10 +334,7 @@ body.dark .logo-text {
     transform: translateY(0);
   }
 }
-/* HIDE HAMBURGER BY DEFAULT (FOR DESKTOP) */
-.hamburger {
-  display: none;
-}
+
 
 /* 🍔 Hamburger Styles */
 .hamburger {
@@ -424,5 +421,18 @@ body.dark .logo-text {
   .dropdown-content li {
     margin-left: 10px;
   }
+
 }
+/* Mobile: One recipe per row */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .floating-icons img {
+    width: 90px;
+    opacity: 0.7;
+  }
+}
+
 
