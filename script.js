@@ -180,3 +180,7 @@ function handleSearch(e) {
   playClick();
   searchRecipes();
 }
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("show");
+}
