@@ -37,7 +37,7 @@ Welcome to **Bit Bites** — a retro pixel-themed recipe discovery website where
 - Related recipes are suggested automatically.
 - Clicking ❤️ Save stores the recipe in your browser’s local storage.
 - Saved recipes appear in the **Favourites** tab and can be unsaved with one click.
-- Mobile users see a compact layout with one recipe per row and a dropdown nav.
+- Mobile users see a compact layout.
 
 ---
 
