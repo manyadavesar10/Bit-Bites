@@ -1,6 +1,6 @@
 # 🍕 Bit Bites
 
-Welcome to **Bit Bites** — a retro pixel-themed recipe discovery website where you can search, explore, and save your favorite meals in pixel-perfect style!
+Welcome to **Bit Bites** — a retro pixel-themed recipe discovery website where you can search, explore, and save your favorite meals in style!
 
 
 ---
