@@ -2,6 +2,9 @@
 
 Welcome to **Bit Bites** — a retro pixel-themed recipe discovery website where you can search, explore, and save your favorite meals in style!
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ffcf74f5-4a14-43c0-a0a8-baea7bc8993d" alt="Bit Bites Screenshot" width="600">
+</p>
 
 ---
 
@@ -83,4 +86,3 @@ Made with ❤️ by [Manya Davesar]
 ---
 
 > 💾 Don't forget to ⭐ star this repo if you like it!
-
